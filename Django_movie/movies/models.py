@@ -56,7 +56,7 @@ class Movie(models.Model):
     directors = models.ManyToManyField(Actor, verbose_name="режиссёры", related_name="film_director")
     actors = models.ManyToManyField(Actor, verbose_name="Актёры", related_name="film_actor")
     genres = models.ManyToManyField(Genre, verbose_name="Жанры")
-    world_premiere = models.TimeField("Премьера в мире", default=date.today)
+    world_premiere = models.DateField("Премьера в мире", default=date.today)
     budget = models.PositiveIntegerField("Бюджет фильма", default=0, help_text="Указывать в долларах")
     fees_in_usa = models.PositiveIntegerField("Сборы в США", default=0, help_text="Указывать в долларах")
     fees_in_world = models.PositiveIntegerField("Сборы в мире", default=0, help_text="Указывать в долларах")
